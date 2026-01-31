@@ -53,4 +53,20 @@ pg_restore -U username -h localhost -d mydb backup.dump
 
 *Приведите ответ в свободной форме.*
 
+---  
+
+**Полная резервная копия**  
+
+mysqldump -U username -h localhost -B mydb --single-transaction --flush-logs --master-data=2 > full_backup.sql  
+
+**Инкрементная копия раз в час**  
+
+mysql -U username -h localhost -e "FLUSH BINARY LOGS;"  
+
+cp /var/lib/mysql/binlog.00000X /backup/hourly_backup/  
+
 ---
+
+
+
+
