@@ -37,6 +37,15 @@
 *Приведите ответ в свободной форме.*
 
 ---
+**Резервное копирование (pg_dump)**  
+
+pg_dump -U username -h localhost -d mydb -F c -f backup.dump  
+
+**Восстановление (pg_restore)**  
+
+pg_restore -U username -h localhost -d mydb backup.dump  
+
+---
 
 ### Задание 3. MySQL
 
